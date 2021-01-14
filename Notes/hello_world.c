@@ -7,3 +7,6 @@
 void main() {
     printf("Hello, World!");
 }
+
+// This function returns nothing, so, similar to Java, we specify "void".
+// Specifying "int" means we will return an integer
