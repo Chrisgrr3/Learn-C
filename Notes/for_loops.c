@@ -22,7 +22,6 @@ void main()
     int factorial = 1;
     int i;
 
-    /* calculate the factorial using a for loop  here*/
     for (i = 0; i < 10; i++)
     {
         factorial *= array[i];
