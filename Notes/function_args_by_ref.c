@@ -4,6 +4,12 @@ typedef struct
     int x;
     int y;
 } point;
+typedef struct
+{
+    char *name;
+    int age;
+} person;
+void birthday(person *p);
 void addone(int *n);
 void move(point *p);
 void main()
@@ -22,6 +28,13 @@ void main()
     // If we define the function move to move a point forward in both x and y directions, we can send a pointer to the function of the point structure instead of sending two pointers (check the move function).
 
     // The top move function can be reduced using the shorthand syntax of the move function below it.
+    person john;
+    john.name = "John";
+    john.age = 27;
+
+    printf("%s is %d years old.\n", john.name, john.age);
+    birthday(&john);
+    printf("Happy birthday! %s is now %d years old.\n", john.name, john.age);
 }
 void addone(int *n)
 {
@@ -36,4 +49,8 @@ void move(point *p)
 {
     p->x++;
     p->y++;
+}
+void birthday(person *p)
+{
+    p->age++;
 }
