@@ -46,4 +46,16 @@ void main()
     vehicle mycar;
     mycar.brand = "Ford";
     mycar.model = 2007;
+
+    // Below is an example creating a person struct:
+    typedef struct
+    {
+        char *name;
+        int age;
+    } person;
+
+    person john;
+    john.name = "John";
+    john.age = 27;
+    printf("%s is %d years old.", john.name, john.age);
 }
