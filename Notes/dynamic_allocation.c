@@ -19,6 +19,20 @@ void main()
     myperson->age = 27;
     // Once we're done using the dynamically allocated struct, we can release it using free:
     free(myperson);
-    // Free does not delete the myperson varaible, and simply releases the data it points to.
+    // Free does not delete the myperson variable, and simply releases the data it points to.
     // Myperson will still point to somewhere in memory - but after calling myperson we won't have access to that area anymore. We must not use the pointer again until we allocate new data using it.
+    // Below we dynamically allocate a point structure:
+
+    typedef struct
+    {
+        int x;
+        int y;
+    } point;
+    point *mypoint = (point *)malloc(sizeof(point));
+
+    mypoint->x = 10;
+    mypoint->y = 5;
+    printf("mypoint coordinates: %d, %d\n", mypoint->x, mypoint->y);
+
+    free(mypoint);
 }
