@@ -89,4 +89,39 @@ void main()
 
     // Free the top-level pointer
     free(pvowels);
+
+    // Now, lets look at another example:
+
+    int m, n;
+    int **pnumbers;
+    // Here, we have defined a 2D pointer variable.
+    pnumbers = (int **)malloc(3 * sizeof(int *));
+    // Now, we have allocated memory for holding three rows.
+    pnumbers[0] = (int *)malloc(1 * sizeof(int));
+    pnumbers[1] = (int *)malloc(2 * sizeof(int));
+    pnumbers[2] = (int *)malloc(3 * sizeof(int));
+    // Finally, we have allocated the memory for storing the individual elements in a row.
+
+    pnumbers[0][0] = 1;
+    pnumbers[1][0] = 1;
+    pnumbers[1][1] = 1;
+    pnumbers[2][0] = 1;
+    pnumbers[2][1] = 2;
+    pnumbers[2][2] = 1;
+
+    for (m = 0; m < 3; m++)
+    {
+        for (n = 0; n <= m; n++)
+        {
+            printf("%d", pnumbers[m][n]);
+        }
+        printf("\n");
+    }
+
+    for (m = 0; m < 3; m++)
+    {
+        free(pnumbers[m]);
+    }
+
+    free(pnumbers);
 }
