@@ -39,4 +39,5 @@ void main()
         printf("%d \t", iarray[c]);
         c++;
     }
+    // Let's remember, we use function pointers so that we can flexibly use libraries.
 }
